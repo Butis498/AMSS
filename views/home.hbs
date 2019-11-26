@@ -1,0 +1,69 @@
+{{> head}}
+{{> navbar }}
+
+
+<div>
+
+    <div>
+        {{#each products}}
+        <hr>
+        <div class="row">
+
+            <div class="producto">
+
+                <div class="column">
+                    <img src={{foto}} class="img-product">
+
+
+                </div>
+
+                <div class="column">
+                    <p class="nombre">
+                        <div class="row">
+                            <div class="column">
+                                <p class="nombre">{{name}}</p>
+                            </div>
+                            <div class="column">
+                                <p class="price">{{price}}$</p>
+                            </div>
+                        </div>
+
+                    </p>
+                    <p class="description">
+                        {{description}}
+                    </p>
+                    <br><br><br><br>
+
+                    <div class="column" style="padding-left: 30px;">
+                        <form class="btnform" action="/Cart/{{_id}}" method="GET">
+                            <button type="submit" class="button" style="font-size: 20px;"> Add to Cart</button>
+                        </form>
+
+                        <br />
+                        <label for="input-1" class="control-label">Give a rating for {{name}}:</label>
+                        <input id="input-1" name="input-1" class="rating rating-loading" data-min="0" data-max="5"
+                            data-step="0.1" value="2">
+
+                        <script>
+                            $("#input-id").rating();
+                        </script>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+
+
+
+
+{{> footer }}

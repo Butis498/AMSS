@@ -1,0 +1,118 @@
+{{> head}}
+{{> navbar }}
+
+<div>
+
+    <div>
+        {{#each products}}
+        <hr>
+        <div class="row">
+
+            <div class="producto">
+
+                <div class="column2">
+                    <img src={{foto}} class="img-cartproduct">
+
+
+                </div>
+
+                <div class="column2">
+                    <p class="nombrecart">
+                        <div class="row">
+                            <div class="column2">
+                                <p class="nombrecart">{{name}}</p>
+                            </div>
+                            <div class="column2">
+                                <p class="pricecart">{{price}}$</p>
+                            </div>
+
+
+                        </div>
+
+
+                    </p>
+
+
+
+                </div>
+
+
+
+
+                <div class="column2" style="padding-left: 100px;">
+                    <form class="btnform" action="/Cart/{{_id}}" method="POST">
+                        <button type="submit" class="cancelbtn">Remove</button>
+                    </form>
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+        {{/each}}
+    </div>
+
+    <div class="totalPrice">
+
+
+        Total amount: {{total}} $
+    </div>
+    <div class="column2" style="padding-left:20px;">
+        <form class="btnform" action="/" method="POST">
+            <button id="myBtn" class="button" type="submit">Confirm Purchase</button>
+
+        </form>
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Order#33</h2>
+                    <span class="close">&times;</span>
+
+                </div>
+                <div class="modal-body">
+                    <p>Order confirmed</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+    </div>
+</div>
+
+
+{{> footer}}
