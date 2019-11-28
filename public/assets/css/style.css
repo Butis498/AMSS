@@ -399,3 +399,14 @@ a {
 .star-rating .fa-star {
     color: yellow;
 }
+
+footer {
+    background-color: rgb(161, 170, 180);
+    color: white;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+}
